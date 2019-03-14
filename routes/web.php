@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Skills;
+Route::get('/',"SkillsController@index");
+Route::get('/skills',"SkillsController@info");
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test',function(){
+  $data = Skills::all();
+  dd($data);
 });
