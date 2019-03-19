@@ -14,8 +14,7 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        $skill = Skills::all();
-        return view('welcome',compact('skill'));
+        return view('welcome');
     }
 
     /**
