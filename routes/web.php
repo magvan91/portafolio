@@ -11,10 +11,9 @@
 |
 */
 use App\Skills;
-Route::get('/',"SkillsController@index");
-Route::get('/skills',"SkillsController@info");
+Route::get('/',"HomeController@index");
 
-Route::get('/test',function(){
-  $data = Skills::all();
-  dd($data);
+Route::middleware(['ajax'])->group(function () {
+    Route::get('/skills',"SkillsController@info");
+    Route::get('/profiles',"ProfilesController@profiles");
 });
