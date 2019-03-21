@@ -10,10 +10,31 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Skills;
+/*use App\User;
+Route::get('create_user',function() {
+    $usuario = new User;
+
+    $usuario->name = 'Marco';
+    $usuario->password = Hash::make('admin');
+    $usuario->email = 'mag.van.gam@gmail.com';
+    $usuario->save();
+
+});*/
+
 Route::get('/',"HomeController@index");
 
 Route::middleware(['ajax'])->group(function () {
     Route::get('/skills',"SkillsController@info");
     Route::get('/profiles',"ProfilesController@profiles");
+    Route::get('/jobs',"JobsController@jobs");
 });
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('login','Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login','Auth\LoginController@showLoginForm');
+    Route::get('reset','Auth\LoginController@showLoginForm')->name('password.request');
+});
+
+Auth::routes();
+Route::resource('crudskills','CrudSkillsController');

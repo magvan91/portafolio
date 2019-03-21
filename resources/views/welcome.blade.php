@@ -5,3 +5,6 @@
 @section('skills')
   <skills-component></skills-component>
 @endsection
+@section('jobs')
+  <jobs-component></jobs-component>
+@endsection
