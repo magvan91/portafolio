@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('profile')
-  <profile-component></profile-component>
+  <Profile></Profile>
 @endsection
 @section('skills')
-  <skills-component></skills-component>
+  <Skills></Skills>
 @endsection
 @section('jobs')
-  <jobs-component></jobs-component>
+  <Jobs></Jobs>
 @endsection

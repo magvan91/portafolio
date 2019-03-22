@@ -33,7 +33,8 @@ Route::middleware(['ajax'])->group(function () {
 Route::prefix('admin')->group(function () {
     Route::get('login','Auth\LoginController@showLoginForm')->name('login');
     Route::post('login','Auth\LoginController@showLoginForm');
-    Route::get('reset','Auth\LoginController@showLoginForm')->name('password.request');
+    Route::get('logout','Auth\LoginController@logout')->name('logout');
+    Route::get('/','CrudMainController@index');
 });
 
 Auth::routes();
