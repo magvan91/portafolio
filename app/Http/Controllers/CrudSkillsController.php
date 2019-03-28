@@ -17,7 +17,7 @@ class CrudSkillsController extends Controller
      */
     public function index()
     {
-        
+        return $skill = Skills::all();
     }
 
     /**

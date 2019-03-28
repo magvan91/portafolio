@@ -15,7 +15,7 @@
 </head>
   <body>
     <div id="app">
-      <Profilecrud></Profilecrud>
+        @yield('data')
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

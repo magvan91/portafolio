@@ -37,12 +37,20 @@ Vue.component('jobs', Jobs);
 import Profilecrud from './components/CrudProfileComponent.vue';
 Vue.component('profileCrud',Profilecrud);
 
+import Skillscrud from './components/CrudSkillsComponents.vue';
+Vue.component('skillsCrud',Skillscrud);
+
 const app = new Vue({
     el: '#app',
+    data:
+    {
+      currentView: 'Profilecrud'
+    },
     components: {
         Profile,
         Skills,
         Jobs,
-        Profilecrud
-    },
+        Profilecrud,
+        Skillscrud
+    }
 });
