@@ -40,6 +40,10 @@ Vue.component('profileCrud',Profilecrud);
 import Skillscrud from './components/CrudSkillsComponents.vue';
 Vue.component('skillsCrud',Skillscrud);
 
+import SequentialEntrance from "vue-sequential-entrance";
+import "vue-sequential-entrance/vue-sequential-entrance.css";
+Vue.use(SequentialEntrance);
+
 const app = new Vue({
     el: '#app',
     data:
