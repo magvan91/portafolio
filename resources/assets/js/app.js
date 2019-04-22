@@ -19,6 +19,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+//Front
 import Profile from './components/ProfileComponent.vue';
 Vue.component('profile', Profile);
 
@@ -27,7 +28,10 @@ Vue.component('skills', Skills);
 
 import Jobs from './components/JobsComponent.vue';
 Vue.component('jobs', Jobs);
-//Front
+
+import Formcontact from './components/FormContactComponent.vue';
+Vue.component('formcontact', Formcontact);
+
 //Vue.component('profile-component', require('./components/ProfileComponent.vue'));
 //Vue.component('skills-component', require('./components/SkillsComponent.vue'));
 //Vue.component('jobs-component', require('./components/JobsComponent.vue'));
@@ -46,15 +50,12 @@ Vue.use(SequentialEntrance);
 
 const app = new Vue({
     el: '#app',
-    data:
-    {
-      currentView: 'Profilecrud'
-    },
     components: {
         Profile,
         Skills,
         Jobs,
         Profilecrud,
-        Skillscrud
+        Skillscrud,
+        Formcontact
     }
 });

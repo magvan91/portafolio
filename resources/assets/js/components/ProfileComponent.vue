@@ -37,7 +37,7 @@
       axios
       .get('/profiles')
       .then(response => {
-          this.name = response.data[0].name;
+          this.Name = response.data[0].name;
           this.AppPaterno = response.data[0].AppPaterno;
           this.AppMaterno = response.data[0].AppMaterno;
           this.FechaNacimiento = response.data[0].fecha_nacimiento;

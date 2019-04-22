@@ -1,4 +1,4 @@
 @extends('admin.main');
 @section('data')
-  <Profilecrud></Profilecrud>
+  <Jobcrud></Jobcrud>
 @endsection

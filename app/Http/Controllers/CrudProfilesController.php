@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Http\Requests\StoreProfile;
 use App\Profile;
 class CrudProfilesController extends Controller
 {
@@ -49,7 +50,7 @@ class CrudProfilesController extends Controller
      */
     public function show($id)
     {
-        //
+        return Profile::findOrFail($id);
     }
 
     /**
@@ -70,9 +71,26 @@ class CrudProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProfile $request, $id)
     {
-        //
+
+        $profile = Profile::findOrFail($id);
+        $profile->name = $request->get('NameEdit');
+        $profile->AppPaterno = $request->get('AppPaternoEdit');
+        $profile->AppMaterno = $request->get('AppMaternoEdit');
+        $profile->fecha_nacimiento = $request->get('FechaNacimientoEdit');
+        $profile->carrera = $request->get('CarreraEdit');
+        $profile->universidad = $request->get('UniversidadEdit');
+
+        if($profile->save()){
+            $data["error"] = 0;
+            $data["msg"] = "Registro Actualizado";
+        }else{
+            $data["error"] = 1;
+            $data["msg"] = "Ocurrio un error";
+        }
+
+        return response()->json($data);
     }
 
     /**

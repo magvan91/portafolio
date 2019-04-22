@@ -8,3 +8,6 @@
 @section('jobs')
   <Jobs></Jobs>
 @endsection
+@section('formContact')
+  <Formcontact></Formcontact>
+@endsection

@@ -8,6 +8,7 @@
         <title>Developer Web - Marco Antonio García Cabrera</title>
         <link rel="stylesheet" href="css/app.css" type="text/css">
         <script async type="text/javascript" src="js/app.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
        <div id="app">
@@ -15,6 +16,7 @@
                 @yield('profile')
                 @yield('skills')
                 @yield('jobs')
+                @yield('formContact')
             </div>
         </div>
     </body>

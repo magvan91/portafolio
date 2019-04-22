@@ -19,7 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('AppPaterno',25);
             $table->string('AppMaterno',25);
             $table->date('fecha_nacimiento');
-            $table->string('carrera',35);
+            $table->string('carrera',70);
             $table->string('universidad',60);
             $table->timestamps();
         });
