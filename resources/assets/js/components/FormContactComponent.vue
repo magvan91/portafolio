@@ -1,28 +1,23 @@
 <template>
-  <div class="row"> <br><br><br>
-    <div class="col-md-7"><h3>Contacto</h3><hr></div>
-    <div class="col-md-5"></div>
-    <div class="col-md-7 offset-md-2">
-      <form>
-        <div class="form-group">
-          <label for="">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre(s):">
-        </div>
-        <div class="form-group">
-          <label for="">Email</label>
-          <input type="email" class="form-control" id="correo" placeholder="Email:">
-        </div>
-        <div class="form-group">
-          <label for="">Mensaje</label>
-          <textarea name="mensaje" rows="8" cols="80" id="mensaje"></textarea>
-        </div>
-        <div class="col-md-7 offset-md-2">
-          <div class="g-recaptcha" data-sitekey="6LczVZ8UAAAAAD_qx-5ccTEi33lcEiGK4X7smluO"></div>
-        </div>
-        <div class="col-md-12 text-center">
-          <button type="button" class="btn btn-primary">Enviar</button>
-        </div>
-      </form>
-    </div>
-  </div>
+  <b-container>
+   <b-row>
+     <b-col md="12"><h3>Contacto</h3><hr></b-col>
+     <b-col md="7" offset-md="2">
+        <b-form>
+          <b-form-group label="Nombre:" label-for="nombre">
+            <b-form-input id="nombre" type="text" required placeholder="Nombre(s):"></b-form-input>
+          </b-form-group>
+          <b-form-group label="Email:" label-for="email">
+            <b-form-input id="email" type="email" required placeholder="Email"></b-form-input>
+          </b-form-group>
+          <b-form-group label="Enter your name" label-for="input-horizontal">
+            <b-form-textarea id="mensaje" placeholder="Escribe tu mensaje" rows="3" max-rows="6"></b-form-textarea>
+          </b-form-group>
+          <b-col md="12" class="text-center"> 
+            <b-button-group><b-button  size="lg" variant="primary">Enviar Mensaje</b-button></b-button-group>
+          </b-col>
+        </b-form>
+     </b-col>
+   </b-row>
+ </b-container>
 </template>

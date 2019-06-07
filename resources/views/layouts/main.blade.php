@@ -12,12 +12,10 @@
     </head>
     <body>
        <div id="app">
-            <div class="container">
-                @yield('profile')
-                @yield('skills')
-                @yield('jobs')
-                @yield('formContact')
-            </div>
+            @yield('profile')
+            @yield('skills')
+            @yield('jobs')
+            @yield('formContact')
         </div>
     </body>
 </html>

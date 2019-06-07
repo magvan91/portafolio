@@ -3,22 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Http\Requests\StoreProfile;
-use App\Profile;
-class CrudProfilesController extends Controller
+
+class CrudJobsController extends Controller
 {
-    public function __construct(){
-      $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        return $profiles = Profile::all();
+        //
     }
 
     /**
@@ -50,7 +45,7 @@ class CrudProfilesController extends Controller
      */
     public function show($id)
     {
-        return Profile::findOrFail($id);
+        //
     }
 
     /**
@@ -71,28 +66,9 @@ class CrudProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreProfile $request, $id)
+    public function update(Request $request, $id)
     {
-
-        $profile = Profile::findOrFail($id);
-        $profile->name = $request->get('NameEdit');
-        $profile->AppPaterno = $request->get('AppPaternoEdit');
-        $profile->AppMaterno = $request->get('AppMaternoEdit');
-        $chunk_date = explode('-',$request->get('FechaNacimientoEdit'));
-        $get_day = substr($chunk_date[2], 0, -14);
-        $profile->fecha_nacimiento = $chunk_date[0]."-".$chunk_date[1]."-".$get_day;
-        $profile->carrera = $request->get('CarreraEdit');
-        $profile->universidad = $request->get('UniversidadEdit');
-
-        if($profile->save()){
-            $data["error"] = 0;
-            $data["msg"] = "Registro Actualizado";
-        }else{
-            $data["error"] = 1;
-            $data["msg"] = "Ocurrio un error";
-        }
-
-        return response()->json($data);
+        //
     }
 
     /**

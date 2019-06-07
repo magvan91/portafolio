@@ -1,24 +1,26 @@
 <template>
-  <div class="row">
-    <div class="col-md-6"> <img src="img/myAvatar.png" class="img-responsive mx-auto d-block" alt=""> </div>
-    <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-12 text-center">
-              <h1>{{Name}} {{AppPaterno}} {{AppMaterno}} </h1>
-              <h2>Desarrollador Web</h2>
-          </div>
-          <div class="col-md-12">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra lectus at fermentum pretium. Sed tincidunt lectus nunc, at accumsan lorem finibus non. Nam velit nisl, vulputate sed purus non, luctus ornare tortor. Morbi tincidunt pretium ex ut congue. Vivamus placerat libero non ante aliquet gravida. Morbi odio turpis, vestibulum non tellus non, lacinia vestibulum ipsum. Aliquam tincidunt gravida gravida. Integer vestibulum pulvinar dignissim. Aliquam fringilla nec velit a varius. Ut auctor volutpat erat eget dignissim. Praesent porta tortor nec odio aliquam, non rhoncus nunc sollicitudin. Cras auctor semper nulla, a condimentum nisl molestie ultricies.
-              <br>
-          </div>
-          <div class="col-md-12">
-              <span>Edad:</span> {{Edad}} <br>
-              <span>Carrera:</span> {{Carrera}} <br>
-              <span>Universidad:</span> {{Universidad}} <br>
-          </div>
-        </div>
-    </div>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col md="6" style="overflow:hidden;"><b-img center rounded src="img/myAvatar.png" alt=""></b-img></b-col>
+      <b-col md="6">
+        <b-row>
+          <b-col md="12">
+            <h3>{{Name}} {{AppPaterno}} {{AppMaterno}} </h3>
+            <h4>Desarrollador Web</h4>
+          </b-col>
+          <b-col md="12">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra lectus at fermentum pretium. Sed tincidunt lectus nunc, at accumsan lorem finibus non. Nam velit nisl, vulputate sed purus non, luctus ornare tortor. Morbi tincidunt pretium ex ut congue. Vivamus placerat libero non ante aliquet gravida. Morbi odio turpis, vestibulum non tellus non, lacinia vestibulum ipsum. Aliquam tincidunt gravida gravida. Integer vestibulum pulvinar dignissim. Aliquam fringilla nec velit a varius. Ut auctor volutpat erat eget dignissim. Praesent porta tortor nec odio aliquam, non rhoncus nunc sollicitudin. Cras auctor semper nulla, a condimentum nisl molestie ultricies.
+            <br>
+          </b-col>
+          <b-col md="12">
+            <span>Edad:</span> {{Edad}} <br>
+            <span>Carrera:</span> {{Carrera}} <br>
+            <span>Universidad:</span> {{Universidad}} <br>
+          </b-col>
+        </b-row>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

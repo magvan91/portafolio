@@ -40,3 +40,4 @@ Route::prefix('admin')->group(function () {
 Auth::routes();
 Route::resource('crudskills','CrudSkillsController');
 Route::resource('crudprofile','CrudProfilesController');
+Route::resource('crudjobs','CrudJobsController');

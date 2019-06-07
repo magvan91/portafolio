@@ -13,7 +13,6 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -47,6 +46,9 @@ Vue.component('skillsCrud',Skillscrud);
 import SequentialEntrance from "vue-sequential-entrance";
 import "vue-sequential-entrance/vue-sequential-entrance.css";
 Vue.use(SequentialEntrance);
+
+import DatePicker from 'vue2-datepicker'
+Vue.use(DatePicker);
 
 const app = new Vue({
     el: '#app',

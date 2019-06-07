@@ -24,12 +24,12 @@ class StoreProfile extends FormRequest
     public function rules()
     {
         return [
-          'NameEdit' => 'required',
-          'AppPaternoEdit' => 'required',
-          'AppMaternoEdit'  => 'required',
-          'UniversidadEdit'  => 'required',
+          'NameEdit' => 'required|string',
+          'AppPaternoEdit' => 'required|string',
+          'AppMaternoEdit'  => 'required|string',
+          'UniversidadEdit'  => 'required|string',
           'FechaNacimientoEdit'  => 'required|date',
-          'CarreraEdit'  => 'required',
+          'CarreraEdit'  => 'required|string',
         ];
     }
 

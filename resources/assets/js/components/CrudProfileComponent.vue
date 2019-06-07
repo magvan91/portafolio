@@ -65,8 +65,8 @@
               <p v-show="errors_form.CarreraEdit!=''" class="text-danger">{{errors_form.CarreraEdit}}</p>
             </div>
             <div class="form-group">
-              <label for="">Fecha de Nacimiento</label>
-              <input v-model="fields.FechaNacimientoEdit" type="text" class="form-control" id="" placeholder="Fecha de Nacimiento">
+              <label for="">Fecha de Nacimiento</label><br>
+              <date-picker v-model="fields.FechaNacimientoEdit" lang="es"></date-picker>
               <p v-show="errors_form.FechaNacimientoEdit!=''" class="text-danger">{{errors_form.FechaNacimientoEdit}}</p>
             </div>
             <button type="submit" class="btn btn-dark float-right" name="button">Enviar</button>
@@ -115,7 +115,7 @@ export default {
         FechaNacimientoEdit: '',
         CarreraEdit: ''
       }
-     }
+    }
   },
   mounted(){
     axios
@@ -143,6 +143,11 @@ export default {
       }
       return age;
     },
+    sum_day(fecha,dias){
+      var result = new Date(fecha);
+      result.setDate(result.getDate() + dias);
+      return result;
+    },
     clear_errors(){
       for(let key in this.errors_form) {
         this.errors_form[key] = '';
@@ -157,42 +162,56 @@ export default {
         this.fields.NameEdit = response.data.name;
         this.fields.AppPaternoEdit = response.data.AppPaterno;
         this.fields.AppMaternoEdit = response.data.AppMaterno;
-        this.fields.FechaNacimientoEdit = response.data.fecha_nacimiento;
+        this.fields.FechaNacimientoEdit = this.sum_day(response.data.fecha_nacimiento,1);
         this.fields.UniversidadEdit = response.data.universidad;
         this.fields.CarreraEdit = response.data.carrera;
       })
       .catch(error => {})
     },
     submit(id) {
-      this.clear_errors();
-      axios
-      .put('/crudprofile/'+id,this.fields)
-      .then(response => {
-        if(response.data.error==0){
-           this.Alert = response.data.msg;
-           this.Name = this.fields.NameEdit;
-           this.AppPaterno = this.fields.AppPaternoEdit;
-           this.AppMaterno = this.fields.AppMaternoEdit;
-           this.FechaNacimiento = this.fields.FechaNacimientoEdit;
-           this.Edad = this.birthday(this.fields.FechaNacimientoEdit);
-           this.Universidad = this.fields.UniversidadEdit;
-           this.Carrera = this.fields.CarreraEdit;
-           $('.alert').addClass("alert-success");
+      this.Alert = '';
+      let pasa = true;
+      let fields_form = this.fields || {};
+      for(let key in fields_form) {
+        if(fields_form[key] == "" || fields_form[key].length == 0 || fields_form[key] == null){
+            pasa = false;
+            this.errors_form[key] = 'Campo requerido';
         }
-     })
-     .catch(error => {
-       if (error.response.status === 422) {
-          let errors = error.response.data.errors || {};
-          for(let clave in errors) {
-            this.errors_form[clave] = errors[clave][0];
+      }
+      if(pasa){
+        this.clear_errors();
+        axios
+        .put('/crudprofile/'+id,this.fields)
+        .then(response => {
+          if(response.data.error==0){
+             this.Alert = response.data.msg;
+             this.Name = this.fields.NameEdit;
+             this.AppPaterno = this.fields.AppPaternoEdit;
+             this.AppMaterno = this.fields.AppMaternoEdit;
+             this.FechaNacimiento = this.fields.FechaNacimientoEdit;
+             this.Edad = this.birthday(this.fields.FechaNacimientoEdit);
+             this.Universidad = this.fields.UniversidadEdit;
+             this.Carrera = this.fields.CarreraEdit;
+             $('.alert').removeClass('alert-danger').addClass("alert-success");
           }
-          this.Alert = 'Datos incorrectos';
-       }else if(error.response.status === 500){
-         this.Alert = 'Ocurrio un error intentelo más tarde';
-       }
-       $('.alert').addClass("alert-danger");
-     })
-    }
+       })
+       .catch(error => {
+         if (error.response.status === 422) {
+            let errors = error.response.data.errors || {};
+            for(let clave in errors) {
+              this.errors_form[clave] = errors[clave][0];
+            }
+            this.Alert = 'Datos incorrectos';
+         }else if(error.response.status === 500){
+           this.Alert = 'Ocurrio un error intentelo más tarde';
+         }
+         $('.alert').removeClass('alert-success').addClass("alert-danger");
+       })
+     }else{
+       this.Alert = 'Datos incorrectos';
+       $('.alert').removeClass('alert-success').addClass("alert-danger");
+     }
+   } //Fin Submit Form
   }
 }
 </script>
