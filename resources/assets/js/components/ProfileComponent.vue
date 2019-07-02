@@ -1,23 +1,46 @@
 <template>
   <b-container>
-    <b-row>
-      <b-col md="6" style="overflow:hidden;"><b-img center rounded src="img/myAvatar.png" alt=""></b-img></b-col>
-      <b-col md="6">
-        <b-row>
-          <b-col md="12">
-            <h3>{{Name}} {{AppPaterno}} {{AppMaterno}} </h3>
-            <h4>Desarrollador Web</h4>
-          </b-col>
-          <b-col md="12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra lectus at fermentum pretium. Sed tincidunt lectus nunc, at accumsan lorem finibus non. Nam velit nisl, vulputate sed purus non, luctus ornare tortor. Morbi tincidunt pretium ex ut congue. Vivamus placerat libero non ante aliquet gravida. Morbi odio turpis, vestibulum non tellus non, lacinia vestibulum ipsum. Aliquam tincidunt gravida gravida. Integer vestibulum pulvinar dignissim. Aliquam fringilla nec velit a varius. Ut auctor volutpat erat eget dignissim. Praesent porta tortor nec odio aliquam, non rhoncus nunc sollicitudin. Cras auctor semper nulla, a condimentum nisl molestie ultricies.
-            <br>
-          </b-col>
-          <b-col md="12">
-            <span>Edad:</span> {{Edad}} <br>
-            <span>Carrera:</span> {{Carrera}} <br>
-            <span>Universidad:</span> {{Universidad}} <br>
-          </b-col>
-        </b-row>
+    <b-row class="p-3">
+      <b-col md="12" style="overflow:hidden;">
+        <b-img center v-bind="mainProps"  src="img/myAvatar.png" alt="Marco Anotnio García Cabrera"></b-img>
+      </b-col>
+    </b-row>
+    <b-row class="p-2">
+      <b-col md="12">
+        <h3 class="text-center"><span class="txt_name">{{Name}}</span> <br> <span class="txt_apellidos">{{AppPaterno}} {{AppMaterno}}</span></h3>
+      </b-col>
+    </b-row>
+    <b-row class="p-1">
+      <b-col md="12">
+        <div class="profesion mx-auto text-center">Desarrollador Web</div>
+      </b-col>
+    </b-row>
+    <b-row class="p-3">
+      <b-col md="12">
+        <p>Soy un Desarrollador Web de {{Edad}} años de edad, llevo en este bonito mercado ya 6 años. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra lectus at fermentum pretium. Sed tincidunt lectus nunc, at accumsan lorem finibus non. Nam velit nisl, vulputate sed purus non, luctus ornare tortor. Morbi tincidunt pretium ex ut congue. Vivamus placerat libero non ante aliquet gravida. Morbi odio turpis, vestibulum non tellus non, lacinia vestibulum ipsum. Aliquam tincidunt gravida gravida. Integer vestibulum pulvinar dignissim. Aliquam fringilla nec velit a varius. Ut auctor volutpat erat eget dignissim. Praesent porta tortor nec odio aliquam, non rhoncus nunc sollicitudin. Cras auctor semper nulla, a condimentum nisl molestie ultricies.</p>
+      </b-col>
+    </b-row>
+    <b-row class="p-4">
+      <b-col md="4">
+        <div class="circulos_secciones mx-auto d-inline-block">
+          <b-img center v-bind="birreteProps" src="img/birrete.png" alt="Birrete"></b-img>
+        </div>
+        <div class="d-inline-block">
+          <h4 class="titulo_secciones d-table">
+            Información Educativa
+          </h4>
+        </div>
+      </b-col>
+      <b-col md="8"><hr class="lineas_secciones"></b-col>
+    </b-row>
+    <b-row class="px-4 pb-4">
+      <b-col md="12">
+        <div>
+          <span class="span_titulos_educacion">Carrera:</span> <span class="span_txt_educacion">{{Carrera}}</span>
+        </div>
+        <div>
+          <span class="span_titulos_educacion">Universidad:</span> <span class="span_txt_educacion">{{Universidad}}</span>
+        </div>
       </b-col>
     </b-row>
   </b-container>
@@ -33,6 +56,8 @@
         Universidad: null,
         Edad: null,
         Carrera: null,
+        mainProps: { class: 'm1 rounded-circle photo_circle' },
+        birreteProps: {class:'circulos_imgs'}
        }
     },
     mounted(){

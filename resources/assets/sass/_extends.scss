@@ -1,0 +1,24 @@
+%titulos-secciones{
+    color: $titulos-color-secciones;
+    font-weight: $regular;
+    font-size: $titulos-tamanio-secciones;
+    padding: 0 0 0 10px;
+}
+
+%circulos{
+    border-radius: 50%;
+    border: #E7EEEE 4px solid;
+    height: auto;
+    width: 7vh;
+    padding: 8px;
+}
+
+%circulos_imgs{
+    height: auto;
+    width: 3vh;
+}
+
+%linea_secciones{
+    border: solid 1px #E7EEEE;
+    margin: 1.5rem 0 0 0;
+}

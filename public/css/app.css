@@ -1,5 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
+.titulo_secciones {
+  color: #646d6d;
+  font-weight: 500;
+  font-size: 24px;
+  padding: 0 0 0 10px;
+}
+
+.circulos_secciones {
+  border-radius: 50%;
+  border: #E7EEEE 4px solid;
+  height: auto;
+  width: 7vh;
+  padding: 8px;
+}
+
+.circulos_imgs {
+  height: auto;
+  width: 3vh;
+}
+
+.lineas_secciones {
+  border: solid 1px #E7EEEE;
+  margin: 1.5rem 0 0 0;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10653,6 +10678,46 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.photo_circle {
+  border: #E7EEEE 10px solid;
+  width: 50vh;
+  height: auto;
+}
+
+.txt_name {
+  color: #00A59C;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.txt_apellidos {
+  color: #858b8c;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.profesion {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #00A59C;
+  border-radius: 17px;
+  width: 50vh;
+  padding: 4px;
+}
+
+.span_titulos_educacion {
+  color: #72797a;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.span_txt_educacion {
+  color: #00A59C;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .bootstrap-skills-box,

@@ -1,0 +1,5 @@
+@mixin textos($color,$tamanio,$grosor){
+    color: $color;
+    font-size: $tamanio;
+    font-weight: $grosor;
+}

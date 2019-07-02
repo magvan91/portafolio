@@ -5,9 +5,57 @@
 // Variables
 @import "variables";
 
-// Bootstrap
+// Mixins
+@import "mixins";
 
+// Extends
+@import "extends";
+
+// Bootstrap
 @import "~bootstrap/scss/bootstrap.scss";
+
+.photo_circle{
+  border: #E7EEEE 10px solid;
+  width: 50vh;
+  height: auto;
+}
+.txt_name{
+ @include textos($verde-agua,$size_nombre,$regular);
+}
+.txt_apellidos{
+  @include textos($apellidos,$size_nombre,$regular)
+}
+.profesion{
+  @include textos($blanco,18px,$regular);
+  background-color: $verde-agua;
+  border-radius: 17px;
+  width: 50vh;
+  padding: 4px;
+}
+
+.titulo_secciones{
+  @extend %titulos-secciones;
+}
+
+.circulos_secciones{
+  @extend %circulos;
+}
+
+.circulos_imgs{
+  @extend %circulos_imgs;
+}
+
+.span_titulos_educacion{
+  @include textos($titulos-educacion,18px,$regular);
+}
+
+.span_txt_educacion{
+  @include textos($verde-agua,18px,$regular);
+}
+
+.lineas_secciones{
+  @extend %linea_secciones;
+}
 
 @mixin rellenos($color){
   background-color: $color;
