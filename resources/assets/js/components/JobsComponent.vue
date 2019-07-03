@@ -1,28 +1,29 @@
 <template>
   <b-container>
-   <b-row>
-    <b-col md="12"><h3>Experiencia Laboral</h3><hr></b-col>
-
-    <div v-for="(info, index) in jobs" :key="index">
-      <b-row v-if="index%2==0">
-        <b-col class="text-center digitas justify-content-center align-self-center">
-          <a :href="info.pagina" target="_blank">{{info.empresa}}</a>
-          <br>Mayo 2017 - Actualmente Laborando
+    <b-row class="p-4">
+      <b-col md="6" lg="4">
+        <div class="circulos_secciones mx-auto d-inline-block">
+          <b-img center class="circulos_imgs" src="img/jobs.png" alt="Birrete"></b-img>
+        </div>
+        <div class="d-inline-block">
+          <h4 class="titulo_secciones d-table">
+            Experiencia Laboral
+          </h4>
+        </div>
+      </b-col>
+      <b-col md="6" lg="8"><hr class="lineas_secciones"></b-col>
+    </b-row>
+    <b-row class="p-2">
+      <div v-for="(info, index) in jobs" :key="index">
+        <div class="circles_job"></div>
+        <b-col md="12" class="mx-2 b_left_empresa">
+          <div class="name_empresa">{{info.empresa}}</div>
+          <div class="fechas_job">Mayo 2017 - Junio 2019</div>
+          <p class="funciones_jobs">{{info.actividades}}</p>
+          <div><hr class="lineas_secciones"></div>
         </b-col>
-        <b-col>Actividades: {{info.actividades}}</b-col>
-        <div class="w-100" />
-      </b-row>
-      <b-row v-else>
-        <b-col>Actividades: {{info.actividades}}</b-col>
-        <b-col class="text-center digitas justify-content-center align-self-center">
-          <a :href="info.pagina" target="_blank">{{info.empresa}}</a>
-          <br> Noviembre 2016 - Mayo 2017
-        </b-col>
-        <div class="w-100" />
-      </b-row>
-    </div>
-
-  </b-row>
+      </div>
+    </b-row>
  </b-container>
 </template>
 

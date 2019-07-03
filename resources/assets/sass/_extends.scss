@@ -19,6 +19,25 @@
 }
 
 %linea_secciones{
-    border: solid 1px #E7EEEE;
+    border: solid 1px #e3e8e8;
     margin: 1.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+    %linea_secciones{
+        border: solid 1px #e3e8e8;
+        margin: 2.2rem 0 0 0;
+    }
+}
+
+@media (max-width: 375px) {
+    %titulos-secciones{
+        font-size: $titulos-tamanio-secciones - 2;
+    }
+}
+
+@media (max-width: 320px) {
+    %titulos-secciones{
+        font-size: $titulos-tamanio-secciones - 6;
+    }
 }

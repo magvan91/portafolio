@@ -23,13 +23,13 @@
  @include textos($verde-agua,$size_nombre,$regular);
 }
 .txt_apellidos{
-  @include textos($apellidos,$size_nombre,$regular)
+  @include textos($gris-txt,$size_nombre,$regular)
 }
 .profesion{
   @include textos($blanco,18px,$regular);
   background-color: $verde-agua;
   border-radius: 17px;
-  width: 50vh;
+  width: 90%;
   padding: 4px;
 }
 
@@ -55,6 +55,40 @@
 
 .lineas_secciones{
   @extend %linea_secciones;
+}
+
+.bg-skills{
+  background-color: #F7F7F7;
+}
+
+.circles_job{
+  background-color: $titulos-educacion;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  left: 3.8%;
+  right: 0px;
+}
+.b_left_empresa{
+  border-left: 1px solid $titulos-educacion;
+}
+.name_empresa{
+  color:$verde-agua;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.fechas_job{
+  color: $fechas-job;
+  font-size: $size_fechas_job;
+  font-weight: $regular; 
+}
+
+.funciones_jobs{
+  color: $gris-txt;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 @mixin rellenos($color){
@@ -312,4 +346,14 @@ p[data-value]:after {
                                                         rgba(255, 255, 255, .25),
                                                         rgba(0,0,0,.2)),
      -moz-linear-gradient( left, #09c, #690);
+}
+
+@media (max-width: 573205.98px) {
+  .photo_circle{
+    width: 40vh;
+  }
+  .circles_job{
+    left: 0.4%;
+    right: 0px;
+  }
 }

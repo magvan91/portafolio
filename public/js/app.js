@@ -2144,6 +2144,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2229,9 +2230,6 @@ __webpack_require__.r(__webpack_exports__);
       Carrera: null,
       mainProps: {
         class: 'm1 rounded-circle photo_circle'
-      },
-      birreteProps: {
-        class: 'circulos_imgs'
       }
     };
   },
@@ -2275,6 +2273,43 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -60887,86 +60922,69 @@ var render = function() {
     [
       _c(
         "b-row",
+        { staticClass: "p-4" },
         [
-          _c("b-col", { attrs: { md: "12" } }, [
-            _c("h3", [_vm._v("Experiencia Laboral")]),
-            _c("hr")
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.jobs, function(info, index) {
-            return _c(
+          _c("b-col", { attrs: { md: "6", lg: "4" } }, [
+            _c(
               "div",
-              { key: index },
+              { staticClass: "circulos_secciones mx-auto d-inline-block" },
               [
-                index % 2 == 0
-                  ? _c(
-                      "b-row",
-                      [
-                        _c(
-                          "b-col",
-                          {
-                            staticClass:
-                              "text-center digitas justify-content-center align-self-center"
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                attrs: { href: info.pagina, target: "_blank" }
-                              },
-                              [_vm._v(_vm._s(info.empresa))]
-                            ),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v("Mayo 2017 - Actualmente Laborando\n       ")
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("b-col", [
-                          _vm._v("Actividades: " + _vm._s(info.actividades))
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "w-100" })
-                      ],
-                      1
-                    )
-                  : _c(
-                      "b-row",
-                      [
-                        _c("b-col", [
-                          _vm._v("Actividades: " + _vm._s(info.actividades))
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          {
-                            staticClass:
-                              "text-center digitas justify-content-center align-self-center"
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                attrs: { href: info.pagina, target: "_blank" }
-                              },
-                              [_vm._v(_vm._s(info.empresa))]
-                            ),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(" Noviembre 2016 - Mayo 2017\n       ")
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "w-100" })
-                      ],
-                      1
-                    )
+                _c("b-img", {
+                  staticClass: "circulos_imgs",
+                  attrs: { center: "", src: "img/jobs.png", alt: "Birrete" }
+                })
               ],
               1
-            )
-          })
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "d-inline-block" }, [
+              _c("h4", { staticClass: "titulo_secciones d-table" }, [
+                _vm._v("\n           Experiencia Laboral\n         ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("b-col", { attrs: { md: "6", lg: "8" } }, [
+            _c("hr", { staticClass: "lineas_secciones" })
+          ])
         ],
-        2
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "b-row",
+        { staticClass: "p-2" },
+        _vm._l(_vm.jobs, function(info, index) {
+          return _c(
+            "div",
+            { key: index },
+            [
+              _c("div", { staticClass: "circles_job" }),
+              _vm._v(" "),
+              _c(
+                "b-col",
+                { staticClass: "mx-2 b_left_empresa", attrs: { md: "12" } },
+                [
+                  _c("div", { staticClass: "name_empresa" }, [
+                    _vm._v(_vm._s(info.empresa))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "fechas_job" }, [
+                    _vm._v("Mayo 2017 - Junio 2019")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "funciones_jobs" }, [
+                    _vm._v(_vm._s(info.actividades))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_c("hr", { staticClass: "lineas_secciones" })])
+                ]
+              )
+            ],
+            1
+          )
+        }),
+        0
       )
     ],
     1
@@ -61052,7 +61070,7 @@ var render = function() {
         "b-row",
         { staticClass: "p-1" },
         [
-          _c("b-col", { attrs: { md: "12" } }, [
+          _c("b-col", { attrs: { md: "6", lg: "4", "offset-lg": "4" } }, [
             _c("div", { staticClass: "profesion mx-auto text-center" }, [
               _vm._v("Desarrollador Web")
             ])
@@ -61082,38 +61100,27 @@ var render = function() {
         "b-row",
         { staticClass: "p-4" },
         [
-          _c("b-col", { attrs: { md: "4" } }, [
+          _c("b-col", { attrs: { md: "5", lg: "3" } }, [
             _c(
               "div",
               { staticClass: "circulos_secciones mx-auto d-inline-block" },
               [
-                _c(
-                  "b-img",
-                  _vm._b(
-                    {
-                      attrs: {
-                        center: "",
-                        src: "img/birrete.png",
-                        alt: "Birrete"
-                      }
-                    },
-                    "b-img",
-                    _vm.birreteProps,
-                    false
-                  )
-                )
+                _c("b-img", {
+                  staticClass: "circulos_imgs",
+                  attrs: { center: "", src: "img/birrete.png", alt: "Birrete" }
+                })
               ],
               1
             ),
             _vm._v(" "),
             _c("div", { staticClass: "d-inline-block" }, [
               _c("h4", { staticClass: "titulo_secciones d-table" }, [
-                _vm._v("\n          Información Educativa\n        ")
+                _vm._v("\n          Educación\n        ")
               ])
             ])
           ]),
           _vm._v(" "),
-          _c("b-col", { attrs: { md: "8" } }, [
+          _c("b-col", { attrs: { md: "7", lg: "9" } }, [
             _c("hr", { staticClass: "lineas_secciones" })
           ])
         ],
@@ -61179,63 +61186,68 @@ var render = function() {
     [
       _c(
         "b-row",
+        { staticClass: "p-4" },
         [
-          _c("b-col", { attrs: { md: "12" } }, [
-            _c("h3", [_vm._v("Habilidades")]),
-            _c("hr")
+          _c("b-col", { attrs: { md: "5", lg: "3" } }, [
+            _c(
+              "div",
+              { staticClass: "circulos_secciones mx-auto d-inline-block" },
+              [
+                _c("b-img", {
+                  staticClass: "circulos_imgs",
+                  attrs: { center: "", src: "img/ideas.png", alt: "Birrete" }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "d-inline-block" }, [
+              _c("h4", { staticClass: "titulo_secciones d-table" }, [
+                _vm._v("\n          Habilidades\n        ")
+              ])
+            ])
           ]),
           _vm._v(" "),
-          _c(
-            "b-col",
-            { attrs: { lg: "12", id: "skills" } },
-            [
-              _c(
-                "sequential-entrance",
-                _vm._l(_vm.skills, function(info, index) {
-                  return _c(
-                    "b-col",
-                    {
-                      key: index,
-                      staticClass: "text-center ",
-                      attrs: { md: "3", cols: "12" }
-                    },
-                    [
-                      _c("div", { class: info.color + "-skills-box" }, [
-                        _c(
-                          "p",
-                          {
-                            staticStyle: { width: "65%" },
-                            attrs: { "data-value": info.percent }
-                          },
-                          [_vm._v(_vm._s(info.skill))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "progress",
-                          {
-                            staticClass: "php",
-                            attrs: { max: "100" },
-                            domProps: { value: info.percent }
-                          },
-                          [
-                            _c("div", { staticClass: "progress-bar" }, [
-                              _c(
-                                "span",
-                                { style: "width:" + info.percent + "%" },
-                                [_vm._v(_vm._s(info.percent) + "%")]
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  )
-                }),
-                1
-              )
-            ],
-            1
-          )
+          _c("b-col", { attrs: { md: "7", lg: "9" } }, [
+            _c("hr", { staticClass: "lineas_secciones" })
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "b-row",
+        { staticClass: "p-4 bg-skills" },
+        [
+          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
+            _c("div", [_vm._v("100%")]),
+            _vm._v(" "),
+            _c("div", [_vm._v("PHP")])
+          ]),
+          _vm._v(" "),
+          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
+            _c("div", [_vm._v("100%")]),
+            _vm._v(" "),
+            _c("div", [_vm._v("PHP")])
+          ]),
+          _vm._v(" "),
+          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
+            _c("div", [_vm._v("100%")]),
+            _vm._v(" "),
+            _c("div", [_vm._v("PHP")])
+          ]),
+          _vm._v(" "),
+          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
+            _c("div", [_vm._v("100%")]),
+            _vm._v(" "),
+            _c("div", [_vm._v("PHP")])
+          ]),
+          _vm._v(" "),
+          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
+            _c("div", [_vm._v("100%")]),
+            _vm._v(" "),
+            _c("div", [_vm._v("PHP")])
+          ])
         ],
         1
       )

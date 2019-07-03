@@ -39,14 +39,16 @@ $panel-default-heading-bg: #fff;
 
 // Tamanios Fuentes
 $size_nombre:30px;
+$size_fechas_job:23px;
 $titulos-tamanio-secciones:24px;
 
 //Colores
-$apellidos:#858b8c;
+$gris-txt:#858b8c;
 $verde-agua:#00A59C;
 $blanco: #ffffff;
 $titulos-color-secciones:#646d6d;
 $titulos-educacion:#72797a;
+$fechas-job:#96ba95;
 
 $regular:500;
 
@@ -54,3 +56,7 @@ $php: #8992BE;
 $css: #379AD6;
 $html: #FF7D00;
 $bootstrap: #563D7D;
+
+@media (max-width: 575.98px) {
+    $titulos-tamanio-secciones:18px;
+}

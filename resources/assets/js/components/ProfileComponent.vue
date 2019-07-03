@@ -11,7 +11,7 @@
       </b-col>
     </b-row>
     <b-row class="p-1">
-      <b-col md="12">
+      <b-col md="6" lg="4" offset-lg="4">
         <div class="profesion mx-auto text-center">Desarrollador Web</div>
       </b-col>
     </b-row>
@@ -21,17 +21,17 @@
       </b-col>
     </b-row>
     <b-row class="p-4">
-      <b-col md="4">
+      <b-col md="5" lg="3">
         <div class="circulos_secciones mx-auto d-inline-block">
-          <b-img center v-bind="birreteProps" src="img/birrete.png" alt="Birrete"></b-img>
+          <b-img center class="circulos_imgs" src="img/birrete.png" alt="Birrete"></b-img>
         </div>
         <div class="d-inline-block">
           <h4 class="titulo_secciones d-table">
-            Información Educativa
+            Educación
           </h4>
         </div>
       </b-col>
-      <b-col md="8"><hr class="lineas_secciones"></b-col>
+      <b-col md="7" lg="9"><hr class="lineas_secciones"></b-col>
     </b-row>
     <b-row class="px-4 pb-4">
       <b-col md="12">
@@ -56,8 +56,7 @@
         Universidad: null,
         Edad: null,
         Carrera: null,
-        mainProps: { class: 'm1 rounded-circle photo_circle' },
-        birreteProps: {class:'circulos_imgs'}
+        mainProps: { class: 'm1 rounded-circle photo_circle' }
        }
     },
     mounted(){

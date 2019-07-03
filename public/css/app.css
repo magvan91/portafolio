@@ -21,8 +21,27 @@
 }
 
 .lineas_secciones {
-  border: solid 1px #E7EEEE;
+  border: solid 1px #e3e8e8;
   margin: 1.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .lineas_secciones {
+    border: solid 1px #e3e8e8;
+    margin: 2.2rem 0 0 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .titulo_secciones {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  .titulo_secciones {
+    font-size: 18px;
+  }
 }
 
 /*!
@@ -10704,7 +10723,7 @@ a.text-dark:focus {
   font-weight: 500;
   background-color: #00A59C;
   border-radius: 17px;
-  width: 50vh;
+  width: 90%;
   padding: 4px;
 }
 
@@ -10718,6 +10737,42 @@ a.text-dark:focus {
   color: #00A59C;
   font-size: 18px;
   font-weight: 500;
+}
+
+.bg-skills {
+  background-color: #F7F7F7;
+}
+
+.circles_job {
+  background-color: #72797a;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  left: 3.8%;
+  right: 0px;
+}
+
+.b_left_empresa {
+  border-left: 1px solid #72797a;
+}
+
+.name_empresa {
+  color: #00A59C;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.fechas_job {
+  color: #96ba95;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.funciones_jobs {
+  color: #858b8c;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .bootstrap-skills-box,
@@ -10904,5 +10959,16 @@ p[data-value]:after {
 .node-js::-moz-progress-bar {
   /* Gradient background with Stripes */
   background-image: -moz-linear-gradient(135deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)), -moz-linear-gradient(left, #09c, #690);
+}
+
+@media (max-width: 573205.98px) {
+  .photo_circle {
+    width: 40vh;
+  }
+
+  .circles_job {
+    left: 0.4%;
+    right: 0px;
+  }
 }
 

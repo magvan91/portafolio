@@ -9,5 +9,4 @@
   <Jobs></Jobs>
 @endsection
 @section('formContact')
-  <Formcontact></Formcontact>
 @endsection

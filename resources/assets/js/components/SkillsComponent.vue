@@ -1,5 +1,42 @@
 <template>
   <b-container>
+    <b-row class="p-4">
+      <b-col md="5" lg="3">
+        <div class="circulos_secciones mx-auto d-inline-block">
+          <b-img center class="circulos_imgs" src="img/ideas.png" alt="Birrete"></b-img>
+        </div>
+        <div class="d-inline-block">
+          <h4 class="titulo_secciones d-table">
+            Habilidades
+          </h4>
+        </div>
+      </b-col>
+      <b-col md="7" lg="9"><hr class="lineas_secciones"></b-col>
+    </b-row>
+    <b-row class="p-4 bg-skills">
+      <b-col md="3" class="text-center py-3">
+        <div>100%</div>
+        <div>PHP</div>
+      </b-col>
+      <b-col md="3" class="text-center py-3">
+        <div>100%</div>
+        <div>PHP</div>
+      </b-col>
+      <b-col md="3" class="text-center py-3">
+        <div>100%</div>
+        <div>PHP</div>
+      </b-col>
+      <b-col md="3" class="text-center py-3">
+        <div>100%</div>
+        <div>PHP</div>
+      </b-col>
+      <b-col md="3" class="text-center py-3">
+        <div>100%</div>
+        <div>PHP</div>
+      </b-col>
+    </b-row>
+  </b-container>
+  <!--b-container>
     <b-row>
       <b-col md="12"><h3>Habilidades</h3><hr></b-col>
       <b-col lg="12" id="skills">
@@ -17,7 +54,7 @@
        </sequential-entrance>
       </b-col>
     </b-row>
-  </b-container>
+  </b-container-->
 </template>
 
 <script>
