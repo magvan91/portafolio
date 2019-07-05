@@ -2325,17 +2325,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      skills: []
+      skills: [],
+      colors: {
+        0: 'verde-claro',
+        1: 'verde-oscuro',
+        2: 'verde-agua',
+        3: 'azul'
+      }
     };
   },
   mounted: function mounted() {
@@ -2344,6 +2343,27 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('/skills').then(function (response) {
       return _this.skills = response.data;
     });
+  },
+  methods: {
+    fillProgressUP: function fillProgressUP(percent, index) {
+      if (index == 0) {
+        return {
+          'gt-50-fill-verde-claro': percent > 50
+        };
+      } else if (index == 1) {
+        return {
+          'gt-50-fill-verde-oscuro': percent > 50
+        };
+      } else if (index == 2) {
+        return {
+          'gt-50-fill-verde-agua': percent > 50
+        };
+      } else if (index == 3) {
+        return {
+          'gt-50-fill-azul': percent > 50
+        };
+      }
+    }
   }
 });
 
@@ -61218,37 +61238,46 @@ var render = function() {
       _c(
         "b-row",
         { staticClass: "p-4 bg-skills" },
-        [
-          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
-            _c("div", [_vm._v("100%")]),
-            _vm._v(" "),
-            _c("div", [_vm._v("PHP")])
-          ]),
-          _vm._v(" "),
-          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
-            _c("div", [_vm._v("100%")]),
-            _vm._v(" "),
-            _c("div", [_vm._v("PHP")])
-          ]),
-          _vm._v(" "),
-          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
-            _c("div", [_vm._v("100%")]),
-            _vm._v(" "),
-            _c("div", [_vm._v("PHP")])
-          ]),
-          _vm._v(" "),
-          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
-            _c("div", [_vm._v("100%")]),
-            _vm._v(" "),
-            _c("div", [_vm._v("PHP")])
-          ]),
-          _vm._v(" "),
-          _c("b-col", { staticClass: "text-center py-3", attrs: { md: "3" } }, [
-            _c("div", [_vm._v("100%")]),
-            _vm._v(" "),
-            _c("div", [_vm._v("PHP")])
-          ])
-        ],
+        _vm._l(_vm.skills, function(info, index) {
+          return _c(
+            "b-col",
+            {
+              key: index,
+              staticClass: "text-center py-3",
+              attrs: { md: "6", lg: "3" }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "progress-pie-chart",
+                  class: _vm.fillProgressUP(info.percent, info.color)
+                },
+                [
+                  _c("div", { staticClass: "ppc-progress" }, [
+                    _c("div", {
+                      class: "ppc-progress-fill-" + _vm.colors[info.color],
+                      style: {
+                        transform:
+                          "rotate(" + (info.percent * 360) / 100 + "deg)"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ppc-percents" }, [
+                    _c("div", { staticClass: "pcc-percents-wrapper" }, [
+                      _c("span", [_vm._v(_vm._s(info.percent) + "%")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-center txt_skill p-2" }, [
+                _vm._v(_vm._s(info.skill))
+              ])
+            ]
+          )
+        }),
         1
       )
     ],

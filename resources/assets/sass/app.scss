@@ -90,6 +90,76 @@
   font-weight: 300;
   font-size: 16px;
 }
+
+.progress-pie-chart {
+  margin: 0 auto;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  &.gt-50-fill-verde-claro {
+    @include BgFillCircle($circulo-verde-claro);
+  }
+  &.gt-50-fill-verde-oscuro {
+    @include BgFillCircle($circulo-verde-oscuro);
+  }
+  &.gt-50-fill-verde-agua {
+    @include BgFillCircle($circulo-verde-agua);
+  }
+  &.gt-50-fill-azul {
+    @include BgFillCircle($circulo-azul);
+  }
+}
+.ppc-progress {
+  @include circle($size);
+  clip: rect(0, $size, $size, #{$size/2});
+  .ppc-progress-fill-verde-claro{
+    @include circle($size);
+    @include ProgressCircle($circulo-verde-claro,$size);
+  }
+  .ppc-progress-fill-verde-oscuro{
+    @include circle($size);
+    @include ProgressCircle($circulo-verde-oscuro,$size);
+  }
+  .ppc-progress-fill-verde-agua{
+    @include circle($size);
+    @include ProgressCircle($circulo-verde-agua,$size);
+  }
+  .ppc-progress-fill-azul{
+    @include circle($size);
+    @include ProgressCircle($circulo-azul,$size);
+  }
+  .gt-50-fill-verde-claro &, .gt-50-fill-verde-oscuro &, .gt-50-fill-verde-agua &, .gt-50-fill-azul & {
+    clip: rect(0, #{$size/2}, $size, 0);
+    .ppc-progress-fill-verde-claro, .ppc-progress-fill-verde-oscuro, .ppc-progress-fill-verde-agua,.ppc-progress-fill-azul {
+      clip: rect(0, $size, $size, #{$size/2});
+      background: #E5E5E5;
+    }
+  }
+}
+.ppc-percents {
+  @include circle(#{$size/1.15});
+  background: #fff;
+  text-align: center;
+  display: table;
+  span {
+    display: block;
+    font-size: 2.6em;
+    font-weight: bold;
+    color: #81CE97;
+  }
+}
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.txt_skill{
+  @include textos($verde-agua,19px,$regular);
+  width: 100%;
+}
+
 @media (max-width: 1200px) {
   .circles_job{
     left: 0.2%;

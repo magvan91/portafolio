@@ -14,25 +14,18 @@
       <b-col md="7" lg="9"><hr class="lineas_secciones"></b-col>
     </b-row>
     <b-row class="p-4 bg-skills">
-      <b-col md="3" class="text-center py-3">
-        <div>100%</div>
-        <div>PHP</div>
-      </b-col>
-      <b-col md="3" class="text-center py-3">
-        <div>100%</div>
-        <div>PHP</div>
-      </b-col>
-      <b-col md="3" class="text-center py-3">
-        <div>100%</div>
-        <div>PHP</div>
-      </b-col>
-      <b-col md="3" class="text-center py-3">
-        <div>100%</div>
-        <div>PHP</div>
-      </b-col>
-      <b-col md="3" class="text-center py-3">
-        <div>100%</div>
-        <div>PHP</div>
+      <b-col md="6" lg="3" class="text-center py-3" v-for="(info, index) in skills" :key="index">
+        <div class="progress-pie-chart" v-bind:class="fillProgressUP(info.percent,info.color)">
+          <div class="ppc-progress">
+            <div v-bind:style="{transform: 'rotate('+info.percent*360/100+'deg)'}" v-bind:class="'ppc-progress-fill-'+colors[info.color]"></div>
+          </div>
+          <div class="ppc-percents">
+              <div class="pcc-percents-wrapper">
+                <span>{{info.percent}}%</span>
+              </div>
+          </div>
+        </div>
+        <div class="text-center txt_skill p-2">{{info.skill}}</div>
       </b-col>
     </b-row>
   </b-container>
@@ -61,13 +54,30 @@
 export default {
   data () {
     return {
-      skills: []
+      skills: [],
+      colors:{0:'verde-claro',1:'verde-oscuro',2:'verde-agua',3:'azul'}
     }
   },
   mounted () {
     axios
       .get('/skills')
-      .then(response => (this.skills = response.data))
+      .then(response => (
+        this.skills = response.data
+      ));
+  },
+  methods:{
+    fillProgressUP(percent,index){
+      if(index==0){
+        return {'gt-50-fill-verde-claro': percent > 50}
+      }else if(index==1){
+        return {'gt-50-fill-verde-oscuro': percent > 50}
+      }else if(index==2){
+        return {'gt-50-fill-verde-agua': percent > 50}
+      }else if(index==3){
+        return {'gt-50-fill-azul': percent > 50}
+      }
+      
+    }
   }
 }
 </script>

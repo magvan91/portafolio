@@ -49,13 +49,16 @@ $blanco: #ffffff;
 $titulos-color-secciones:#646d6d;
 $titulos-educacion:#72797a;
 $fechas-job:#96ba95;
+//Colores Circulos
+$circulo-verde-claro:#ccc95c;
+$circulo-verde-oscuro:#95bc96;
+$circulo-verde-agua: #2AC2AB;
+$circulo-azul: #78aed6;
+$percent-txt: #4C6D73;
+//Tamnio Circulos
+$size: 175px;
 
 $regular:500;
-
-$php: #8992BE;
-$css: #379AD6;
-$html: #FF7D00;
-$bootstrap: #563D7D;
 
 @media (max-width: 575.98px) {
     $titulos-tamanio-secciones:18px;
