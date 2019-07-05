@@ -2229,7 +2229,7 @@ __webpack_require__.r(__webpack_exports__);
       Edad: null,
       Carrera: null,
       mainProps: {
-        class: 'm1 rounded-circle photo_circle'
+        class: 'm1 rounded-circle photo_circle img-fluid'
       }
     };
   },

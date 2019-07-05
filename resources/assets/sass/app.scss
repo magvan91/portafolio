@@ -175,3 +175,13 @@
     right: 0px;
   }
 }
+
+@media (max-width: 414px) {
+  .photo_circle{
+    width: 32vh;
+  }
+  .circles_job{
+    left: 0.4%;
+    right: 0px;
+  }
+}

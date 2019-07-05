@@ -56,7 +56,7 @@
         Universidad: null,
         Edad: null,
         Carrera: null,
-        mainProps: { class: 'm1 rounded-circle photo_circle' }
+        mainProps: { class: 'm1 rounded-circle photo_circle img-fluid' }
        }
     },
     mounted(){
