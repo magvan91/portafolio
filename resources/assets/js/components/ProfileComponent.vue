@@ -2,7 +2,7 @@
   <b-container>
     <b-row class="p-3">
       <b-col md="12" style="overflow:hidden;">
-        <b-img center v-bind="mainProps"  src="img/myAvatar.png" alt="Marco Anotnio García Cabrera"></b-img>
+        <b-img center v-bind="mainProps"  src="img/profile.jpg" alt="Marco Anotnio García Cabrera"></b-img>
       </b-col>
     </b-row>
     <b-row class="p-2">
@@ -17,7 +17,13 @@
     </b-row>
     <b-row class="p-3">
       <b-col md="12">
-        <p>Soy un Desarrollador Web de {{Edad}} años de edad, llevo en este bonito mercado ya 6 años. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra lectus at fermentum pretium. Sed tincidunt lectus nunc, at accumsan lorem finibus non. Nam velit nisl, vulputate sed purus non, luctus ornare tortor. Morbi tincidunt pretium ex ut congue. Vivamus placerat libero non ante aliquet gravida. Morbi odio turpis, vestibulum non tellus non, lacinia vestibulum ipsum. Aliquam tincidunt gravida gravida. Integer vestibulum pulvinar dignissim. Aliquam fringilla nec velit a varius. Ut auctor volutpat erat eget dignissim. Praesent porta tortor nec odio aliquam, non rhoncus nunc sollicitudin. Cras auctor semper nulla, a condimentum nisl molestie ultricies.</p>
+        <p>
+          Ingeniero en Tecnologías de la Información y Comunicación con 6 años de experiencia en el ambiente del desarrollo Web, donde mi mayor experiencia ha sido en agencias de marketing, sin embargo, no me cierro a la idea de incursionar en empresas con un giro diferente.
+          <br> <br>
+          Durante mi estadía en cada uno de mis empleos, siempre he imprimido responsabilidad, proactividad y respeto, en cada una de la funciones y tareas que me han tocado desempeñar, por ello considero que en cada lugar en el que he tenido oportunidad de laborar, he dejado una buena imagen de mí.
+          <br><br>
+          Mi objetivo es continuar creciendo como profesional, por lo que busco oportunidades laborales que me ayuden conseguir esto, al tiempo que trato de alinearme completamente con los objetivos de la empresa en turno.
+        </p>
       </b-col>
     </b-row>
     <b-row class="p-4">
