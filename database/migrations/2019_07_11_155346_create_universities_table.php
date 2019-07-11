@@ -16,9 +16,10 @@ class CreateUniversitiesTable extends Migration
         Schema::create('universities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('universidad');
-            $table->string('carrera');
             $table->float('promedio');
             $table->string('titulo');
+            $table->date('fechaInicio');
+            $table->date('fechaFin');
             $table->timestamps();
         });
     }

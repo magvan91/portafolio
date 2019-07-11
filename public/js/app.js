@@ -2148,7 +2148,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      jobs: []
+      jobs: [],
+      meses: {
+        '01': 'Enero',
+        '02': 'Febrero',
+        '03': 'Marzo',
+        '04': 'Abril',
+        '05': 'Mayo',
+        '06': 'Junio',
+        '07': 'Julio',
+        '08': 'Agosto',
+        '09': 'Septiembre',
+        '10': 'Octubre',
+        '11': 'Noviembre',
+        '12': 'Diciembre'
+      }
     };
   },
   mounted: function mounted() {
@@ -2157,6 +2171,17 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('/jobs').then(function (response) {
       return _this.jobs = response.data;
     });
+  },
+  methods: {
+    extractDates: function extractDates(fecha) {
+      if (fecha == null) {
+        return 'Actualmente Laborando';
+      } else {
+        var dateJob = fecha;
+        var chunkDate = dateJob.split('-');
+        return this.meses[chunkDate[1]] + '  ' + chunkDate[0];
+      }
+    }
   }
 });
 
@@ -2233,7 +2258,24 @@ __webpack_require__.r(__webpack_exports__);
       AppMaterno: null,
       Universidad: null,
       Edad: null,
-      Carrera: null,
+      Descripcion: null,
+      Promedio: null,
+      Titulo: null,
+      Universities: [],
+      meses: {
+        '01': 'Enero',
+        '02': 'Febrero',
+        '03': 'Marzo',
+        '04': 'Abril',
+        '05': 'Mayo',
+        '06': 'Junio',
+        '07': 'Julio',
+        '08': 'Agosto',
+        '09': 'Septiembre',
+        '10': 'Octubre',
+        '11': 'Noviembre',
+        '12': 'Diciembre'
+      },
       mainProps: {
         class: 'm1 rounded-circle photo_circle img-fluid'
       }
@@ -2248,8 +2290,10 @@ __webpack_require__.r(__webpack_exports__);
       _this.AppMaterno = response.data[0].AppMaterno;
       _this.FechaNacimiento = response.data[0].fecha_nacimiento;
       _this.Edad = _this.birthday(response.data[0].fecha_nacimiento);
-      _this.Universidad = response.data[0].universidad;
-      _this.Carrera = response.data[0].carrera;
+      _this.Descripcion = response.data[0].descripcion;
+    });
+    axios.get('/universities').then(function (response) {
+      return _this.Universities = response.data;
     });
   },
   methods: {
@@ -2264,6 +2308,11 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return age;
+    },
+    extractDates: function extractDates(fecha) {
+      var dateJob = fecha;
+      var chunkDate = dateJob.split('-');
+      return this.meses[chunkDate[1]] + '  ' + chunkDate[0];
     }
   }
 });
@@ -60996,7 +61045,11 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "fechas_job" }, [
-                    _vm._v("Mayo 2017 - Junio 2019")
+                    _vm._v(
+                      _vm._s(_vm.extractDates(info.fechaInicio)) +
+                        " - " +
+                        _vm._s(_vm.extractDates(info.fechaFin))
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "funciones_jobs" }, [
@@ -61110,22 +61163,7 @@ var render = function() {
         { staticClass: "p-3" },
         [
           _c("b-col", { attrs: { md: "12" } }, [
-            _c("p", [
-              _vm._v(
-                "\n        Ingeniero en Tecnologías de la Información y Comunicación con 6 años de experiencia en el ambiente del desarrollo Web, donde mi mayor experiencia ha sido en agencias de marketing, sin embargo, no me cierro a la idea de incursionar en empresas con un giro diferente.\n        "
-              ),
-              _c("br"),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(
-                "\n        Durante mi estadía en cada uno de mis empleos, siempre he imprimido responsabilidad, proactividad y respeto, en cada una de la funciones y tareas que me han tocado desempeñar, por ello considero que en cada lugar en el que he tenido oportunidad de laborar, he dejado una buena imagen de mí.\n        "
-              ),
-              _c("br"),
-              _c("br"),
-              _vm._v(
-                "\n        Mi objetivo es continuar creciendo como profesional, por lo que busco oportunidades laborales que me ayuden conseguir esto, al tiempo que trato de alinearme completamente con los objetivos de la empresa en turno.\n      "
-              )
-            ])
+            _c("p", { domProps: { innerHTML: _vm._s(_vm.Descripcion) } })
           ])
         ],
         1
@@ -61165,29 +61203,57 @@ var render = function() {
       _c(
         "b-row",
         { staticClass: "px-4 pb-4" },
-        [
-          _c("b-col", { attrs: { md: "12" } }, [
-            _c("div", [
-              _c("span", { staticClass: "span_titulos_educacion" }, [
-                _vm._v("Carrera:")
+        _vm._l(_vm.Universities, function(info, index) {
+          return _c(
+            "b-col",
+            { key: index, staticClass: "py-3", attrs: { md: "12" } },
+            [
+              _c("div", [
+                _c("span", { staticClass: "span_titulos_educacion" }, [
+                  _vm._v("Universidad:")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "span_txt_educacion" }, [
+                  _vm._v(_vm._s(info.universidad))
+                ])
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "span_txt_educacion" }, [
-                _vm._v(_vm._s(_vm.Carrera))
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("span", { staticClass: "span_titulos_educacion" }, [
-                _vm._v("Universidad:")
+              _c("div", [
+                _c("span", { staticClass: "span_titulos_educacion" }, [
+                  _vm._v("Promedio:")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "span_txt_educacion" }, [
+                  _vm._v(_vm._s(info.promedio))
+                ])
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "span_txt_educacion" }, [
-                _vm._v(_vm._s(_vm.Universidad))
+              _c("div", [
+                _c("span", { staticClass: "span_titulos_educacion" }, [
+                  _vm._v("Título Obtenido:")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "span_txt_educacion" }, [
+                  _vm._v(_vm._s(info.titulo))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("span", { staticClass: "span_titulos_educacion" }, [
+                  _vm._v("Periodo:")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "span_txt_educacion" }, [
+                  _vm._v(
+                    _vm._s(_vm.extractDates(info.fechaInicio)) +
+                      " - " +
+                      _vm._s(_vm.extractDates(info.fechaFin))
+                  )
+                ])
               ])
-            ])
-          ])
-        ],
+            ]
+          )
+        }),
         1
       )
     ],

@@ -27,6 +27,7 @@ Route::middleware(['ajax'])->group(function () {
     Route::get('/skills',"SkillsController@info");
     Route::get('/profiles',"ProfilesController@profiles");
     Route::get('/jobs',"JobsController@jobs");
+    Route::get('/universities',"UniversityController@info");
 });
 
 

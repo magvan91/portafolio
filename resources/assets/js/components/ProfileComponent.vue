@@ -17,13 +17,7 @@
     </b-row>
     <b-row class="p-3">
       <b-col md="12">
-        <p>
-          Ingeniero en Tecnologías de la Información y Comunicación con 6 años de experiencia en el ambiente del desarrollo Web, donde mi mayor experiencia ha sido en agencias de marketing, sin embargo, no me cierro a la idea de incursionar en empresas con un giro diferente.
-          <br> <br>
-          Durante mi estadía en cada uno de mis empleos, siempre he imprimido responsabilidad, proactividad y respeto, en cada una de la funciones y tareas que me han tocado desempeñar, por ello considero que en cada lugar en el que he tenido oportunidad de laborar, he dejado una buena imagen de mí.
-          <br><br>
-          Mi objetivo es continuar creciendo como profesional, por lo que busco oportunidades laborales que me ayuden conseguir esto, al tiempo que trato de alinearme completamente con los objetivos de la empresa en turno.
-        </p>
+        <p v-html="Descripcion"></p>
       </b-col>
     </b-row>
     <b-row class="p-4">
@@ -40,12 +34,18 @@
       <b-col md="7" lg="9"><hr class="lineas_secciones"></b-col>
     </b-row>
     <b-row class="px-4 pb-4">
-      <b-col md="12">
+      <b-col md="12" class="py-3" v-for="(info, index) in Universities" :key="index">
         <div>
-          <span class="span_titulos_educacion">Carrera:</span> <span class="span_txt_educacion">{{Carrera}}</span>
+          <span class="span_titulos_educacion">Universidad:</span> <span class="span_txt_educacion">{{info.universidad}}</span>
         </div>
         <div>
-          <span class="span_titulos_educacion">Universidad:</span> <span class="span_txt_educacion">{{Universidad}}</span>
+          <span class="span_titulos_educacion">Promedio:</span> <span class="span_txt_educacion">{{info.promedio}}</span>
+        </div>
+        <div>
+          <span class="span_titulos_educacion">Título Obtenido:</span> <span class="span_txt_educacion">{{info.titulo}}</span>
+        </div>
+        <div>
+          <span class="span_titulos_educacion">Periodo:</span> <span class="span_txt_educacion">{{extractDates(info.fechaInicio)}} - {{extractDates(info.fechaFin)}}</span>
         </div>
       </b-col>
     </b-row>
@@ -61,7 +61,11 @@
         AppMaterno: null,
         Universidad: null,
         Edad: null,
-        Carrera: null,
+        Descripcion:null,
+        Promedio:null,
+        Titulo:null,
+        Universities: [],
+        meses:{'01':'Enero','02':'Febrero','03':'Marzo','04':'Abril','05':'Mayo','06':'Junio','07':'Julio','08':'Agosto','09':'Septiembre','10':'Octubre','11':'Noviembre','12':'Diciembre'},
         mainProps: { class: 'm1 rounded-circle photo_circle img-fluid' }
        }
     },
@@ -74,9 +78,13 @@
           this.AppMaterno = response.data[0].AppMaterno;
           this.FechaNacimiento = response.data[0].fecha_nacimiento;
           this.Edad = this.birthday(response.data[0].fecha_nacimiento);
-          this.Universidad = response.data[0].universidad;
-          this.Carrera = response.data[0].carrera;
+          this.Descripcion = response.data[0].descripcion;
         }
+      )
+      axios
+      .get('/universities')
+      .then(response => 
+         (this.Universities = response.data)
       )
     },
     methods: {
@@ -89,6 +97,12 @@
             age--;
         }
         return age;
+      },
+      extractDates (fecha){
+
+        let dateJob = fecha;
+        let chunkDate = dateJob.split('-');
+        return this.meses[chunkDate[1]] +'  '+ chunkDate[0];  
       }
     }
   }

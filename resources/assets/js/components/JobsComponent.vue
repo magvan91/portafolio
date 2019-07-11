@@ -18,7 +18,7 @@
         <div class="circles_job"></div>
         <b-col md="12" class="mx-2 b_left_empresa">
           <div class="name_empresa">{{info.empresa}}</div>
-          <div class="fechas_job">Mayo 2017 - Junio 2019</div>
+          <div class="fechas_job">{{extractDates(info.fechaInicio)}} - {{extractDates(info.fechaFin)}}</div>
           <p class="funciones_jobs">{{info.actividades}}</p>
           <div><hr class="lineas_secciones"></div>
         </b-col>
@@ -31,13 +31,26 @@
   export default {
     data(){
       return{
-        jobs:[]
+        jobs:[],
+        meses:{'01':'Enero','02':'Febrero','03':'Marzo','04':'Abril','05':'Mayo','06':'Junio','07':'Julio','08':'Agosto','09':'Septiembre','10':'Octubre','11':'Noviembre','12':'Diciembre'}
       }
     },
     mounted(){
       axios
       .get('/jobs')
       .then(response => (this.jobs = response.data))
+    },
+    methods:{
+      extractDates (fecha){
+        if(fecha == null){
+          return 'Actualmente Laborando';
+        }else{
+          let dateJob = fecha;
+          let chunkDate = dateJob.split('-');
+          return this.meses[chunkDate[1]] +'  '+ chunkDate[0];  
+        }
+        
+      }
     }
   }
 </script>
