@@ -17,7 +17,7 @@ class CreateSkillsTable extends Migration
             $table->increments('id');
             $table->string('skill',50);
             $table->integer('percent');
-            $table->string('color',50);
+            $table->integer('color');
             $table->timestamps();
         });
     }

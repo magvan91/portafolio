@@ -17,7 +17,6 @@ class CreateJobsTable extends Migration
             $table->increments('id');
             $table->string('empresa',50);
             $table->string('puesto',50);
-            $table->string('pagina',100);
             $table->longText('actividades');
             $table->date('fechaInicio');
             $table->date('fechaFin')->nullable();

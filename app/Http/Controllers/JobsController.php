@@ -83,6 +83,7 @@ class JobsController extends Controller
     }
 
     public function jobs(){
-        return $jobs = Jobs::all();
+        $jobs = Jobs::orderBy('actualmenteLaborando', 'desc')->get();
+        return $jobs;
     }
 }

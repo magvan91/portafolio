@@ -49,7 +49,6 @@
           let chunkDate = dateJob.split('-');
           return this.meses[chunkDate[1]] +'  '+ chunkDate[0];  
         }
-        
       }
     }
   }
