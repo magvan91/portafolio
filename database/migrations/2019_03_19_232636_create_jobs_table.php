@@ -17,10 +17,11 @@ class CreateJobsTable extends Migration
             $table->increments('id');
             $table->string('empresa',50);
             $table->string('puesto',50);
-            $table->string('pagina',60);
+            $table->string('pagina',100);
             $table->longText('actividades');
             $table->date('fechaInicio');
-            $table->date('fechaFin');
+            $table->date('fechaFin')->nullable();
+            $table->integer('actualmenteLaborando')->default(0);
             $table->timestamps();
         });
     }
