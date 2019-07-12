@@ -2,6 +2,9 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
+        <meta name="author" content="Marco Antonio García Cabrera">
+        <meta name="description" content="Página personal, donde podras encontrar mi historial laboral y las habilidades técnicas que manejo">
+        <meta name="keywords" content="Desarrollo Web, PHP, Programador, México, CDMX, Programación, Ciudad de México, Codeigniter, Ingeniero, Ingeniero en Sistemas">
         <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
