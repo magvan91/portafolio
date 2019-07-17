@@ -10,17 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*use App\User;
-Route::get('create_user',function() {
-    $usuario = new User;
-
-    $usuario->name = 'Marco';
-    $usuario->password = Hash::make('admin');
-    $usuario->email = 'mag.van.gam@gmail.com';
-    $usuario->save();
-
-});*/
-
 Route::get('/',"HomeController@index");
 
 Route::middleware(['ajax'])->group(function () {
