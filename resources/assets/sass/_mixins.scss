@@ -1,0 +1,24 @@
+@mixin textos($color,$tamanio,$grosor){
+    color: $color;
+    font-size: $tamanio;
+    font-weight: $grosor;
+}
+
+@mixin circle($size) {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - #{$size/2});
+    top: calc(50% - #{$size/2});
+    width: $size;
+    height: $size;
+}
+@mixin ProgressCircle($color,$size) {
+    clip: rect(0, #{$size/2}, $size, 0);
+    background:$color;
+    transform: rotate(60deg);
+}
+
+@mixin BgFillCircle($color){
+    background-color:$color;
+}

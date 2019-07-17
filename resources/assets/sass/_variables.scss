@@ -1,0 +1,65 @@
+
+// Body
+$body-bg: #f5f8fa;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$brand-primary: #3097D1;
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger: #bf5329;
+
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 0.875rem;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;
+
+// Tamanios Fuentes
+$size_nombre:30px;
+$size_fechas_job:23px;
+$titulos-tamanio-secciones:24px;
+
+//Colores
+$gris-txt:#858b8c;
+$verde-agua:#00A59C;
+$blanco: #ffffff;
+$titulos-color-secciones:#646d6d;
+$titulos-educacion:#72797a;
+$fechas-job:#96ba95;
+//Colores Circulos
+$circulo-verde-claro:#ccc95c;
+$circulo-verde-oscuro:#95bc96;
+$circulo-verde-agua: #2AC2AB;
+$circulo-azul: #78aed6;
+$percent-txt: #4C6D73;
+//Tamnio Circulos
+$size: 175px;
+
+$regular:500;
+
+@media (max-width: 575.98px) {
+    $titulos-tamanio-secciones:18px;
+}

@@ -1,0 +1,12 @@
+@extends('layouts.main')
+@section('profile')
+  <Profile></Profile>
+@endsection
+@section('skills')
+  <Skills></Skills>
+@endsection
+@section('jobs')
+  <Jobs></Jobs>
+@endsection
+@section('formContact')
+@endsection

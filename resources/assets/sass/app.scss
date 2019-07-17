@@ -1,0 +1,187 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Mixins
+@import "mixins";
+
+// Extends
+@import "extends";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap.scss";
+
+.photo_circle{
+  border: #E7EEEE 10px solid;
+  width: 50vh;
+  height: auto;
+}
+.txt_name{
+ @include textos($verde-agua,$size_nombre,$regular);
+}
+.txt_apellidos{
+  @include textos($gris-txt,$size_nombre,$regular)
+}
+.profesion{
+  @include textos($blanco,18px,$regular);
+  background-color: $verde-agua;
+  border-radius: 17px;
+  width: 90%;
+  padding: 4px;
+}
+
+.titulo_secciones{
+  @extend %titulos-secciones;
+}
+
+.circulos_secciones{
+  @extend %circulos;
+}
+
+.circulos_imgs{
+  @extend %circulos_imgs;
+}
+
+.span_titulos_educacion{
+  @include textos($titulos-educacion,18px,$regular);
+}
+
+.span_txt_educacion{
+  @include textos($verde-agua,18px,$regular);
+}
+
+.lineas_secciones{
+  @extend %linea_secciones;
+}
+
+.bg-skills{
+  background-color: #F7F7F7;
+}
+
+.circles_job{
+  background-color: $titulos-educacion;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  left: 0.2%;
+  right: 0px;
+}
+.b_left_empresa{
+  border-left: 1px solid $titulos-educacion;
+}
+.name_empresa{
+  color:$verde-agua;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.fechas_job{
+  color: $fechas-job;
+  font-size: $size_fechas_job;
+  font-weight: $regular; 
+}
+
+.funciones_jobs{
+  color: $gris-txt;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.progress-pie-chart {
+  margin: 0 auto;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  &.gt-50-fill-verde-claro {
+    @include BgFillCircle($circulo-verde-claro);
+  }
+  &.gt-50-fill-verde-oscuro {
+    @include BgFillCircle($circulo-verde-oscuro);
+  }
+  &.gt-50-fill-verde-agua {
+    @include BgFillCircle($circulo-verde-agua);
+  }
+  &.gt-50-fill-azul {
+    @include BgFillCircle($circulo-azul);
+  }
+}
+.ppc-progress {
+  @include circle($size);
+  clip: rect(0, $size, $size, #{$size/2});
+  .ppc-progress-fill-verde-claro{
+    @include circle($size);
+    @include ProgressCircle($circulo-verde-claro,$size);
+  }
+  .ppc-progress-fill-verde-oscuro{
+    @include circle($size);
+    @include ProgressCircle($circulo-verde-oscuro,$size);
+  }
+  .ppc-progress-fill-verde-agua{
+    @include circle($size);
+    @include ProgressCircle($circulo-verde-agua,$size);
+  }
+  .ppc-progress-fill-azul{
+    @include circle($size);
+    @include ProgressCircle($circulo-azul,$size);
+  }
+  .gt-50-fill-verde-claro &, .gt-50-fill-verde-oscuro &, .gt-50-fill-verde-agua &, .gt-50-fill-azul & {
+    clip: rect(0, #{$size/2}, $size, 0);
+    .ppc-progress-fill-verde-claro, .ppc-progress-fill-verde-oscuro, .ppc-progress-fill-verde-agua,.ppc-progress-fill-azul {
+      clip: rect(0, $size, $size, #{$size/2});
+      background: #E5E5E5;
+    }
+  }
+}
+.ppc-percents {
+  @include circle(#{$size/1.15});
+  background: #fff;
+  text-align: center;
+  display: table;
+  span {
+    display: block;
+    font-size: 2.6em;
+    font-weight: bold;
+    color: #81CE97;
+  }
+}
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.txt_skill{
+  @include textos($verde-agua,19px,$regular);
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .circles_job{
+    left: 0.2%;
+    right: 0px;
+  }
+}
+@media (max-width: 576px) {
+  .photo_circle{
+    width: 40vh;
+  }
+  .circles_job{
+    left: 0.4%;
+    right: 0px;
+  }
+}
+
+@media (max-width: 414px) {
+  .photo_circle{
+    width: 32vh;
+  }
+  .circles_job{
+    left: 0.4%;
+    right: 0px;
+  }
+}
