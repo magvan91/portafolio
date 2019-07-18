@@ -19,6 +19,10 @@
   width: 50vh;
   height: auto;
 }
+.icos-social{
+  width: 7vh;
+  height: auto;
+}
 .txt_name{
  @include textos($verde-agua,$size_nombre,$regular);
 }

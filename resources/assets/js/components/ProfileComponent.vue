@@ -2,7 +2,17 @@
   <b-container>
     <b-row class="p-3">
       <b-col md="12" style="overflow:hidden;">
-        <b-img center v-bind="mainProps"  src="img/profile.jpg" alt="Marco Anotnio García Cabrera"></b-img>
+        <b-img center v-bind="mainProps" title="Marco Antonio García Cabrera" src="img/profile.jpg" alt="Marco Anotnio García Cabrera"></b-img>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col md="12" class="mx-auto text-center">
+       <b-link href="https://www.linkedin.com/in/marco-antonio-garc%C3%ADa-cabrera-8b7996b4/" target="_blank" class="links_icos">
+        <b-img v-bind="socialProps" title="LinkedIn"  :src="In" alt="Linkedin" @mouseover="In='img/ico_linkedin2.png'" @mouseleave="In='img/ico_linkedin1.png'"></b-img>
+       </b-link> 
+       <b-link href="https://twitter.com/marco_trance" target="_blank" class="links_icos">
+        <b-img v-bind="socialProps" title="Twitter" :src="Tw" @mouseover="Tw='img/ico_twitter2.png'" @mouseleave="Tw='img/ico_twitter1.png'" alt="Twitter" class="ico_twitter"></b-img> 
+       </b-link>
       </b-col>
     </b-row>
     <b-row class="p-2">
@@ -11,7 +21,7 @@
       </b-col>
     </b-row>
     <b-row class="p-1">
-      <b-col md="6" lg="4" offset-lg="4">
+      <b-col md="6" lg="4" offset-lg="4" offset-md="3">
         <div class="profesion mx-auto text-center">Desarrollador Web</div>
       </b-col>
     </b-row>
@@ -65,8 +75,11 @@
         Promedio:null,
         Titulo:null,
         Universities: [],
+        In:'img/ico_linkedin1.png',
+        Tw:'img/ico_twitter1.png',
         meses:{'01':'Enero','02':'Febrero','03':'Marzo','04':'Abril','05':'Mayo','06':'Junio','07':'Julio','08':'Agosto','09':'Septiembre','10':'Octubre','11':'Noviembre','12':'Diciembre'},
-        mainProps: { class: 'm1 rounded-circle photo_circle img-fluid' }
+        mainProps: { class: 'm1 rounded-circle photo_circle img-fluid' },
+        socialProps: { class: 'd-inline px-1 icos-social' }
        }
     },
     mounted(){
@@ -99,7 +112,6 @@
         return age;
       },
       extractDates (fecha){
-
         let dateJob = fecha;
         let chunkDate = dateJob.split('-');
         return this.meses[chunkDate[1]] +'  '+ chunkDate[0];  
